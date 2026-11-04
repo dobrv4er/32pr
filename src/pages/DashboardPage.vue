@@ -19,4 +19,3 @@ function logout() {
     <button @click="logout">Выйти</button>
   </main>
 </template>
-```

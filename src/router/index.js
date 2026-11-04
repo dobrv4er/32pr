@@ -45,4 +45,14 @@ const router = createRouter({
   ],
 })
 
+router.beforeEach((to) => {
+  const isLoggedIn = localStorage.getItem('authToken') === 'demo'
+  if (to.meta.requiresAuth && !isLoggedIn) {
+    return { name: 'Login', query: { redirect: to.fullPath } }
+  }
+  if (to.meta.guestOnly && isLoggedIn) {
+    return { name: 'Dashboard' }
+  }
+})
+```
 export default router
