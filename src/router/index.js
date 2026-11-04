@@ -54,5 +54,5 @@ router.beforeEach((to) => {
     return { name: 'Dashboard' }
   }
 })
-```
+
 export default router
